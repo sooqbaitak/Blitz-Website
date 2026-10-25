@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# HashRouter is used for all app routes; this fallback also makes direct entry safe.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
